@@ -32,4 +32,27 @@ public class DLL {
             head = newNode;
         }
         }
+
+    public void delete(int key){
+        Node current = head;
+
+        while (current != null) {
+            if(current.data == key){
+                if(current.prev != null){
+                    current.prev.next = current.next;
+                }
+                else {
+                    head = current.next;
+                }
+                if (current.next != null){
+                    current.next.prev = current.prev;
+                }
+                else {
+                    tail = current.prev;
+                }
+            }
+            current = current.next;
+        }
+    }
+    
 }
