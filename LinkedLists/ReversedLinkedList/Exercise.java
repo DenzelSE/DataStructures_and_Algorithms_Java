@@ -9,7 +9,7 @@ public class Exercise {
         this.val = val;
     }
     ListNode(int val, ListNode next){
-        this.val = va;
+        this.val = val;
         this.next = next;
     }
         
