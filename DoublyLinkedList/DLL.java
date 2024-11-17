@@ -7,6 +7,7 @@ public class DLL {
     
     public DLL(){}
     public void append(int data){
+
         Node newNode = new Node(data);
         if (tail == null){
             head = newNode;
@@ -17,5 +18,18 @@ public class DLL {
             newNode.prev = tail;
             tail = newNode;
         }
-        };
+        }
+    public void prepend(int data){
+        Node newNode = new Node(data);
+
+        if(head==null){
+            head = newNode;
+            tail = newNode; 
+        }
+        else {
+            head.prev = newNode;
+            newNode.next = head;
+            head = newNode;
+        }
+        }
 }
