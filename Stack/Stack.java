@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class Stack <T> {
     private static class Node <T> {
         private T data;
@@ -15,6 +17,19 @@ public class Stack <T> {
         Node <T> newNode = new Node<>(data);
         newNode.next = top;
         top = newNode;
+    }
+
+    public boolean isEmpty(){
+        return top ==null;
+    }
+
+    public T pop(){
+        if(isEmpty()){
+            throw new EmptyStackException();
+        }
+        T data = top.data;
+        top = top.next;
+         return data;
     }
 
 }
