@@ -11,4 +11,10 @@ public class Stack <T> {
 
     private Node <T> top;
 
+    public void push(T data){
+        Node <T> newNode = new Node<>(data);
+        newNode.next = top;
+        top = newNode;
+    }
+
 }
