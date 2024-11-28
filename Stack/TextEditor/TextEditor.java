@@ -11,5 +11,11 @@ public class TextEditor {
         document.append(text);
         undStack.push(text.length());
     }
+    public void unde(){
+        if(!undStack.isEmpty()){
+            int length = undStack.pop();
+            document.delete(document.length()- length, document.length());
+        }
+    }
 
 }
