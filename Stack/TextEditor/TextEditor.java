@@ -17,5 +17,21 @@ public class TextEditor {
             document.delete(document.length()- length, document.length());
         }
     }
+    public void printDocument() {
+		System.out.println(document);
+	}
+	
+	public static void main(String[] args) {
+		TextEditor editor = new TextEditor();
+		
+		editor.insert("Hello ");
+		editor.insert("World!");
+		editor.printDocument();
+		
+		editor.undo();
+		editor.printDocument();
+
+	}
+
 
 }
