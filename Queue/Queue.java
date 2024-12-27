@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class Queue {
     private static class Node<T> {
     private T data;
@@ -28,6 +30,20 @@ public class Queue {
         }
         tail = newNode;
         size++;
+    }
+
+    public void dequeue(){
+        if (isEmpty()){
+            throw new NoSuchElementException("Queue is empty");
+        }
+        T data = head.data;
+        head = head.next;
+        
+        if(head ==null){
+            tail = null;
+        }
+        size--;
+        return data;
     }
 
 }
