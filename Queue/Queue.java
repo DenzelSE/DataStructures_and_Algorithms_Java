@@ -18,4 +18,16 @@ public class Queue {
     public int size(){
         return size;
     }
+
+    public void enqueue(T data){
+        Node<T> newNode = new Node<T>(data);
+        if (tail == null){
+            head = newNode;
+        }else {
+            tail.next = newNode;
+        }
+        tail = newNode;
+        size++;
+    }
+
 }
