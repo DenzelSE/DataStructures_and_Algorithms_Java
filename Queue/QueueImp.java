@@ -17,11 +17,20 @@ public class QueueImp {
 
     public int peek(){
         if(outStack.isEmpty()){
-            while(!outStack.isEmpty()){
+            while(!inStack.isEmpty()){
                 outStack.push(inStack.pop());
             }
         }
         return outStack.peek();
     }
+
+    public int pop(){
+        peek();
+
+        return outStack.pop();
+    }
     
+    public boolean empty(){
+       return outStack.isEmpty() && inStack.empty(); 
+    }
 }
