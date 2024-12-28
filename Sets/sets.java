@@ -21,5 +21,10 @@ public class sets {
 
         //size
         System.out.println("size of the set: "+ set.size());
+
+        //clearing
+
+        set.clear();
+        System.out.println("after clearing: "+ set);
     }
 }
