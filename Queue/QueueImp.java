@@ -14,5 +14,14 @@ public class QueueImp {
     public void push(int x){
         inStack.push(x);
     }
+
+    public int peek(){
+        if(outStack.isEmpty()){
+            while(!outStack.isEmpty()){
+                outStack.push(inStack.pop());
+            }
+        }
+        return outStack.peek();
+    }
     
 }
